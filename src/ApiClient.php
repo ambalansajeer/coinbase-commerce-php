@@ -6,18 +6,18 @@ use GuzzleHttp\Client;
 
 class ApiClient
 {
-    const API_KEY_PARAM = 'apiKey';
+    const API_KEY_PARAM = 'coinbase';
     const BASE_API_URL_PARAM = 'baseApiUrl';
-    const API_VERSION_PARAM = 'apiVersion';
+    const API_VERSION_PARAM = 'coinbase_version';
     const TIMEOUT_PARAM = 'timeout';
 
     /**
      * @var array
      */
     private $params = [
-        self::API_VERSION_PARAM => null,
+        self::API_VERSION_PARAM => env(self::API_VERSION_PARAM,'2018-03-22'),
         self::BASE_API_URL_PARAM => 'https://api.commerce.coinbase.com/',
-        self::API_VERSION_PARAM => '2018-03-22',
+        self::API_KEY_PARAM => env(self::API_KEY_PARAM,'apiKey'),
         self::TIMEOUT_PARAM => 3
     ];
 
